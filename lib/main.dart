@@ -23,41 +23,356 @@ class HomePage extends StatelessWidget {
         title: const Text('my app'),
         backgroundColor: Colors.red,
       ),
-      body: Center(
-        child: Container(
-          // color: Colors.yellow,
-          padding: const EdgeInsets.all(16.0),
-          width: 200,
-          height: 200,
-          alignment: Alignment.center,
-          decoration:const BoxDecoration(
-            color: Colors.yellow,
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 227, 217, 143),
-                Color.fromARGB(255, 93, 85, 13)],
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                blurRadius: 40,
-                spreadRadius: 5,
-                offset: Offset(0, 3),
+      body: Column(
+        
+        children: [
+          
+          Container(
+           margin:const EdgeInsets.fromLTRB(0, 8, 0, 8),            
+           height: 200,
+            color:Colors.grey,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                    // color: Colors.yellow,
+                    padding: const EdgeInsets.all(16.0),
+                    margin: const EdgeInsets.all(8.0),
+                    width: 100,
+                    height: 100,
+                    alignment: Alignment.center,
+                    decoration:const BoxDecoration(
+                      // color: Colors.yellow,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromARGB(255, 227, 217, 143),
+                          Color.fromARGB(255, 93, 85, 13)],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 40,
+                          spreadRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                      ),
+                    child: const Text('Hello World',
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+                Container(
+                // color: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                decoration:const BoxDecoration(
+                  // color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 227, 161, 143),
+                      Color.fromARGB(255, 152, 64, 17)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 40,
+                      spreadRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  ),
+                child: const Text('Hello World',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.yellow,
+                ),
               ),
-            ],
             ),
-          child: const Text('Hello World',
-          // textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.red,
+                Container(
+                // color: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                decoration:const BoxDecoration(
+                  // color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 202, 227, 143),
+                      Color.fromARGB(255, 69, 93, 13)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 40,
+                      spreadRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  ),
+                child: const Text('Hello World',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.red,
+                ),
+              ),
+            ),
+                
+              ],
+            ),
           ),
-        ),
+          Container(
+            height: 200,
+            margin:const EdgeInsets.fromLTRB(0, 8, 0, 8),
+            color:Colors.grey,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                    // color: Colors.yellow,
+                    padding: const EdgeInsets.all(16.0),
+                    margin: const EdgeInsets.all(8.0),
+                    width: 100,
+                    height: 100,
+                    alignment: Alignment.center,
+                    decoration:const BoxDecoration(
+                      // color: Colors.yellow,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromARGB(255, 227, 217, 143),
+                          Color.fromARGB(255, 93, 85, 13)],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 40,
+                          spreadRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                      ),
+                    child: const Text('Hello World',
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+                Container(
+                // color: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                decoration:const BoxDecoration(
+                  // color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 227, 161, 143),
+                      Color.fromARGB(255, 152, 64, 17)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 40,
+                      spreadRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  ),
+                child: const Text('Hello World',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.yellow,
+                ),
+              ),
+            ),
+                Container(
+                // color: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                decoration:const BoxDecoration(
+                  // color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 202, 227, 143),
+                      Color.fromARGB(255, 69, 93, 13)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 40,
+                      spreadRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  ),
+                child: const Text('Hello World',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.red,
+                ),
+              ),
+            ),
+                
+              ],
+            ),
+          ),
+          Container(
+           margin:const EdgeInsets.fromLTRB(0, 8, 0, 8),            
+           height: 200,
+            color:Colors.grey,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                    // color: Colors.yellow,
+                    padding: const EdgeInsets.all(16.0),
+                    margin: const EdgeInsets.all(8.0),
+                    width: 100,
+                    height: 100,
+                    alignment: Alignment.center,
+                    decoration:const BoxDecoration(
+                      // color: Colors.yellow,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromARGB(255, 227, 217, 143),
+                          Color.fromARGB(255, 93, 85, 13)],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 40,
+                          spreadRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                      ),
+                    child: const Text('Hello World',
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.red,
+                    ),
+                  ),
+                ),
+                Container(
+                // color: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                decoration:const BoxDecoration(
+                  // color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 227, 161, 143),
+                      Color.fromARGB(255, 152, 64, 17)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 40,
+                      spreadRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  ),
+                child: const Text('Hello World',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.yellow,
+                ),
+              ),
+            ),
+                Container(
+                // color: Colors.yellow,
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.all(8.0),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                decoration:const BoxDecoration(
+                  // color: Colors.yellow,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color.fromARGB(255, 202, 227, 143),
+                      Color.fromARGB(255, 69, 93, 13)],
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 40,
+                      spreadRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                  ),
+                child: const Text('Hello World',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.red,
+                ),
+              ),
+            ),
+                
+              ],
+            ),
+          ),
+       
+        ],
       ),
-    )
+
   );
   }
   // In Flutter, Scaffold is a basic material design visual structure. It's a container that holds the visual elements of a typical material design app, including the app bar, body of the app, bottom navigation bar, and floating action button. 
