@@ -15,70 +15,101 @@ void main() {
 
 // The main function is the entry point of the Flutter application. It calls runApp to start the app with a MaterialApp. The MaterialApp is configured with a HomePage widget as its home page.
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});  
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var myInfo = '';
+final myController = TextEditingController();  @override
   Widget build(BuildContext context) {
     // The Container widget is a box model that allows you to create a box with various properties such as color, padding, margin, etc.
     return Scaffold(
+      backgroundColor: Colors.grey[400],
       appBar: AppBar(
         title: const Text('my app'),
         backgroundColor: Colors.red,
       ),
-      body: Container(
-        color: Colors.yellow,
-        width: 300,
-        height: 100,
-        padding: const EdgeInsets.all(20),
-          child: const Text(
-            'Hello World',
-            style: TextStyle(
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-              color: Colors.red,
-            )
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Card(
+            child: SizedBox(
+              height: 600,
+              child: Column(
+                children: <Widget>[
+                  Image.asset('assets/coding.jpg'),
+                  const Text(
+                    'Enter Your Information',
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      height: 3.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Padding(padding:const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: TextField(
+                    controller: myController,
+                    decoration:const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter Name',
+                      labelText: 'Name',
+                    ),
+                  )
+                  ),
+                  Text(
+                    myInfo,
+                    style:const TextStyle(
+                      fontSize: 25.0,
+                      height: 3.0,
+                      fontWeight: FontWeight.bold,
+                    ))
+
+                ],
+              ),
+            )),
         ),
       ),
       drawer: Drawer(
-        // backgroundColor: Colors.redAccent,
-        // shadowColor: Colors.redAccent,
-        // surfaceTintColor: Colors.redAccent,
-        child: ListView(
+          child: ListView(
         padding: EdgeInsets.zero,
-          children:<Widget> [
-            const UserAccountsDrawerHeader(
+        children: <Widget>[
+          const UserAccountsDrawerHeader(
               decoration: BoxDecoration(color: Colors.redAccent),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.white,
                 child: Text("E"),
               ),
-              accountName: Text("ebdollah"), 
+              accountName: Text("ebdollah"),
               accountEmail: Text("ebd@gmail.com")),
-            ListTile(
-              title: Text("Home"),
-              leading: Icon(Icons.home),
-              onTap: (){},
-            ),
-            ListTile(
-              title: Text("About"),
-              leading: Icon(Icons.info),
-              onTap: (){},
-            ),
-          ],
-          
-        )
-        ),
+          ListTile(
+            title: const Text("Home"),
+            leading: const Icon(Icons.home),
+            onTap: () {},
+          ),
+          ListTile(
+            title:const Text("About"),
+            leading:const Icon(Icons.info),
+            onTap: () {},
+          ),
+        ],
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
+          setState(() {
+            myInfo = myController.text;
+          });
+          // myInfo = myController.text;
         },
         backgroundColor: Colors.red,
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.forward),
       ),
-      
-  );
+    );
   }
-  // In Flutter, Scaffold is a basic material design visual structure. It's a container that holds the visual elements of a typical material design app, including the app bar, body of the app, bottom navigation bar, and floating action button. 
 }
 // Widget Hierarchy:
 // Container is the outermost widget, providing a yellow background.
