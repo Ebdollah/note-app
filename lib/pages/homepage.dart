@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:note_app/drawer.dart';
 // ignore: unused_import
 import 'package:note_app/name-card.dart';
+// ignore: unused_import
 import 'package:note_app/pages/login.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  static const String routeName = '/home';
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -48,9 +51,10 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: const Icon(Icons.exit_to_app),
             onPressed: () {
-              Navigator.of(context).pop(
-                        MaterialPageRoute(builder: (context) => login())
-                        );
+              // Navigator.of(context).pop(
+              //           MaterialPageRoute(builder: (context) => login())
+              //           );
+              Navigator.pop(context);
             },
           ),
         ]

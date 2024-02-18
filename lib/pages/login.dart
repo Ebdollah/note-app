@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:note_app/pages/homepage.dart';
 
 class login extends StatefulWidget {
+  static const String routeName = '/login';
   @override
   State<login> createState() => _loginState();
 }
@@ -49,6 +50,7 @@ class _loginState extends State<login> {
                   
                   TextFormField(
                     controller: _usernameController,
+                    validator: (s){},
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       icon: Icon(Icons.email),
@@ -61,6 +63,7 @@ class _loginState extends State<login> {
                   ),
                   TextFormField(
                     controller: _passwordController,
+                    validator: (s){},
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
                     decoration: InputDecoration(
@@ -81,9 +84,15 @@ class _loginState extends State<login> {
                         
                    ),
                     onPressed: (){
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => HomePage())
-                        );
+                      formKey.currentState!.validate();
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(builder: (context) => HomePage())
+                      //   );
+                      // Navigator.push(
+                      //   context, MaterialPageRoute(builder: (context) => HomePage()
+                      // ));
+                      // Navigator.pushNamed(context, '/home');
+                      Navigator.pushNamed(context, HomePage.routeName);
                     }, 
                     
                   )

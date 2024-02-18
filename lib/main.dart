@@ -22,7 +22,13 @@ class myApp extends StatelessWidget {
     return MaterialApp(
     debugShowCheckedModeBanner: false,
     // home: HomePage() // Assuming HomePage is a StatelessWidget
-    home: login()
+    home: login(),
+    routes: {
+      '/login': (context) => login(),
+      // login.routeName: (context) => login(),
+      '/home': (context) => HomePage(),
+      // HomePage.routeName: (context) => HomePage(),
+    },
     // theme: ThemeData.raw(
     //   primarySwatch: Colors.red,
     // ),
