@@ -5,18 +5,24 @@ import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:note_app/drawer.dart';
 // import 'package:note_app/name-card.dart';
+// ignore: unused_import
 import 'package:note_app/pages/homepage.dart';
+import 'package:note_app/pages/login.dart';
 
 void main() {
+  // ignore: prefer_const_constructors
   runApp(myApp());
 }
+// ignore: camel_case_types
 class myApp extends StatelessWidget {
   const myApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-    home: HomePage() // Assuming HomePage is a StatelessWidget
+    return MaterialApp(
+    debugShowCheckedModeBanner: false,
+    // home: HomePage() // Assuming HomePage is a StatelessWidget
+    home: login()
     // theme: ThemeData.raw(
     //   primarySwatch: Colors.red,
     // ),

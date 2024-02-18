@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:note_app/drawer.dart';
 // ignore: unused_import
 import 'package:note_app/name-card.dart';
+import 'package:note_app/pages/login.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -43,6 +44,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('my app'),
         backgroundColor: Colors.red,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.exit_to_app),
+            onPressed: () {
+              Navigator.of(context).pop(
+                        MaterialPageRoute(builder: (context) => login())
+                        );
+            },
+          ),
+        ]
       ),
       // ignore: prefer_const_constructors
         
