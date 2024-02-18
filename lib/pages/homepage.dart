@@ -45,7 +45,18 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.red,
       ),
       // ignore: prefer_const_constructors
-      body: data != null ? Container( color: Colors.blue,) : 
+        
+        body: data != null ? 
+        ListView.builder(
+        itemBuilder: (context, index){
+          return ListTile(
+            title: Text(data[index]['title']),
+            subtitle: Text('ID: ${data[index]['id']}'),
+            leading: Image.network(data[index]['url']),
+          );
+        },  
+        itemCount: data.length,
+      ) : 
         const Center(
           child: CircularProgressIndicator(),
         ),
