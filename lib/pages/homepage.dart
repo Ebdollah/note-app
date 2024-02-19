@@ -6,6 +6,7 @@ import 'package:note_app/name-card.dart';
 import 'package:note_app/pages/login.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,11 +51,14 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.exit_to_app),
-            onPressed: () {
+            onPressed: () async{
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('loggedIn', true);
               // Navigator.of(context).pop(
               //           MaterialPageRoute(builder: (context) => login())
               //           );
-              Navigator.pop(context);
+              // Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, login.routeName);
             },
           ),
         ]

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/pages/homepage.dart';
+import 'package:note_app/main.dart';
+import "package:shared_preferences/shared_preferences.dart";
+import 'package:note_app/utils/constants.dart';
+
 
 class login extends StatefulWidget {
   static const String routeName = '/login';
@@ -83,8 +87,11 @@ class _loginState extends State<login> {
                         padding:const EdgeInsets.fromLTRB(30.0, 15.0, 30.0, 15.0)
                         
                    ),
-                    onPressed: (){
+                    onPressed: ()async{
                       formKey.currentState!.validate();
+                      // Constants.setBool('loggedIn', true);
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      await prefs.setBool('loggedIn', true);
                       // Navigator.of(context).push(
                       //   MaterialPageRoute(builder: (context) => HomePage())
                       //   );
@@ -92,7 +99,8 @@ class _loginState extends State<login> {
                       //   context, MaterialPageRoute(builder: (context) => HomePage()
                       // ));
                       // Navigator.pushNamed(context, '/home');
-                      Navigator.pushNamed(context, HomePage.routeName);
+                      // Navigator.pushNamed(context, HomePage.routeName);
+                      Navigator.pushReplacementNamed(context, HomePage.routeName);
                     }, 
                     
                   )

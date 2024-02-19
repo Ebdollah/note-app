@@ -1,42 +1,36 @@
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/painting.dart';
-// import 'package:flutter/rendering.dart';
-// import 'package:flutter/widgets.dart';
-// import 'package:note_app/drawer.dart';
 // import 'package:note_app/name-card.dart';
 // ignore: unused_import
 import 'package:note_app/pages/homepage.dart';
 import 'package:note_app/pages/login.dart';
+import "package:shared_preferences/shared_preferences.dart";
 
-void main() {
-  // ignore: prefer_const_constructors
-  runApp(myApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  bool isLoggedIn = prefs.getBool('loggedIn') ?? false; // Check for existing login
+
+  runApp(myApp(isLoggedIn: isLoggedIn));
 }
-// ignore: camel_case_types
+
 class myApp extends StatelessWidget {
-  const myApp({super.key});
+  final bool isLoggedIn;
+
+  const myApp({super.key, required this.isLoggedIn});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-    debugShowCheckedModeBanner: false,
-    // home: HomePage() // Assuming HomePage is a StatelessWidget
-    home: login(),
-    routes: {
-      '/login': (context) => login(),
-      // login.routeName: (context) => login(),
-      '/home': (context) => HomePage(),
-      // HomePage.routeName: (context) => HomePage(),
-    },
-    // theme: ThemeData.raw(
-    //   primarySwatch: Colors.red,
-    // ),
-  );
-    //  HomePage();
+      debugShowCheckedModeBanner: false,
+      home: isLoggedIn ? HomePage() : login(),
+      routes: {
+        '/login': (context) => login(),
+        // login.routeName: (context) => login(),
+        '/home': (context) => HomePage(),
+      },
+    );
   }
 }
-
 // The main function is the entry point of the Flutter application. It calls runApp to start the app with a MaterialApp. The MaterialApp is configured with a HomePage widget as its home page.
 
 
